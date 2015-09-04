@@ -4,56 +4,132 @@
     "node": ">=0.12.0"
   },
   "scripts": {
-    "start": "GULP_ENV=development gulp serve:dev",
-    "test": "GULP_ENV=test gulp test",
-    "build": "GULP_ENV=production gulp",
-    "preview": "gulp serve:dist",
-    "deploy": "aws --profile myprofile s3 sync dist s3://mybucket --region myregion --delete"
+    "start": "GULP_ENV=development gulp serve",
+    "build": "GULP_ENV=production gulp"
   },
   "browser": {
-    "fetch": "whatwg-fetch"
+    "zepto/ajax": "./app/scripts/vendor/zepto/ajax.js",
+    "zepto/assets": "./app/scripts/vendor/zepto/assets.js",
+    "zepto/callbacks": "./app/scripts/vendor/zepto/callbacks.js",
+    "zepto/data": "./app/scripts/vendor/zepto/data.js",
+    "zepto/deferred": "./app/scripts/vendor/zepto/deferred.js",
+    "zepto/detect": "./app/scripts/vendor/zepto/detect.js",
+    "zepto/event": "./app/scripts/vendor/zepto/event.js",
+    "zepto/form": "./app/scripts/vendor/zepto/form.js",
+    "zepto/fx": "./app/scripts/vendor/zepto/fx.js",
+    "zepto/fx_methods": "./app/scripts/vendor/zepto/fx_methods.js",
+    "zepto/gesture": "./app/scripts/vendor/zepto/gesture.js",
+    "zepto/ie": "./app/scripts/vendor/zepto/ie.js",
+    "zepto/ios3": "./app/scripts/vendor/zepto/ios3.js",
+    "zepto/selector": "./app/scripts/vendor/zepto/selector.js",
+    "zepto/stack": "./app/scripts/vendor/zepto/stack.js",
+    "zepto/touch": "./app/scripts/vendor/zepto/touch.js",
+    "zepto": "./app/scripts/vendor/zepto/zepto.js"
   },
   "browserify": {
     "transform": [
-      "babelify"
+      "babelify",
+      "browserify-shim"
     ]
   },
+  "browserify-shim": {
+    "zepto/ajax": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/assets": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/callbacks": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/data": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/deferred": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/detect": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/event": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/form": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/fx": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/fx_methods": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/gesture": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/ie": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/ios3": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/selector": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/stack": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto/touch": {
+      "depends": [
+        "zepto"
+      ]
+    },
+    "zepto": "Zepto"
+  },
   "devDependencies": {
-    "autoprefixer-core": "^5.2.0",
     "babel-core": "^5.6.18",
-    "babel-eslint": "^3.1.18",
     "babelify": "^6.1.3",
     "browser-sync": "^2.7.12",
     "browserify": "^10.2.6",
-    "chai": "^3.0.0",
-    "chai-as-promised": "^5.1.0",
+    "browserify-shim": "^3.8.10",
     "del": "^1.2.0",
-    "eslint": "^0.23.0",
     "gulp": "^3.9.0",
-    "gulp-cache": "^0.2.10",
-    "gulp-eslint": "^0.14.0",
-    "gulp-if": "^1.2.5",
-    "gulp-imagemin": "^2.2.1",
-    "gulp-load-plugins": "^1.0.0-rc.1",
-    "gulp-minify-css": "^1.1.6",
-    "gulp-plumber": "^1.0.1",
-    "gulp-postcss": "^5.1.8",
-    "gulp-sass": "^2.0.1",
-    "gulp-size": "^1.2.1",
-    "gulp-sourcemaps": "^1.5.2",
+    "gulp-size": "^2.0.0",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.5",
-    "gulp-webdriver": "^0.1.1",
-    "sinon": "^1.15.4",
-    "sinon-chai": "^2.8.0",
+    "run-sequence": "^1.1.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.2.3"
   },
-  "dependencies": {
-    "es6-promise": "^2.3.0",
-    "fontfaceobserver": "^1.5.0",
-    "svg4everybody": "jonathantneal/svg4everybody",
-    "whatwg-fetch": "^0.9.0"
-  }
+  "dependencies": {}
 }
