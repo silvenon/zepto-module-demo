@@ -1,6 +1,6 @@
 # Zepto as Modules
 
-I wanted to see if there was a downside in turning Zepto into a consumable collection of modules. I this demo I used:
+I wanted to see if there was a downside in turning Zepto into a consumable collection of modules. In this demo I used:
 
   * [browserify][1] to load the modules
   * [babelify][2] to transpile from ES2015
