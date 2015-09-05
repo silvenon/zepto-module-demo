@@ -4,9 +4,7 @@ I wanted to see if there was a downside in turning Zepto into a consumable colle
 
   * [browserify][1] to load the modules
   * [babelify][2] to transpile from ES2015
-  * [browserify-shim][3] to make Zepto play nice.
-
-The Zepto modules I have are untouched copies of the ones at [madrobby/zepto][4], browserify-shim is performing all the magic.
+  * [browserify-shim][3] to shim Zepto *without touching the source*
 
 ## Instructions
 
